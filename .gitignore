@@ -1,0 +1,6 @@
+#Exclude Testing file
+
+Test.java
+
+# Ignore all compiled class files
+*.class
