@@ -1,3 +1,5 @@
+import java.util.Map;
+import java.util.HashMap;
 
 // Given a non-empty array of integers nums, 
 // every element appears twice except for one. 
@@ -12,5 +14,22 @@ class Sloution{
             result ^= num;
         }
         return result;
+    }
+    
+    //another approach with hashmap
+    // advantage -> we can find any element by knowing its frequency
+    int find1(int[] nums){
+        Map<Integer,Integer> numsFreq = new HashMap<>();
+
+        // setting frequencies
+        for(int num:nums){
+            numsFreq.put(num,numsFreq.getOrDefault(num,0)+1);
+        }
+
+        //getting answer
+        for(int key:numsFreq.keySet()){
+            if(numsFreq.get(key) == 1) return key;
+        }
+        return -1;
     }
 }
