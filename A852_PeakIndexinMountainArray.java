@@ -1,4 +1,4 @@
-public class A852PeakIndexinMountainArray {
+public class A852_PeakIndexinMountainArray {
     //using linear search
     public int peakIndexInMountainArray(int[] arr) {
         int peakEle = arr[0];
