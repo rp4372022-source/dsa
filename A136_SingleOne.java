@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 // Given a non-empty array of integers nums, 
 // every element appears twice except for one. 
-// Find that single one.
+// Find that single one. oki
 
 class Sloution{
     //using XOR -> num^num = 0 , if diff num then will return it
