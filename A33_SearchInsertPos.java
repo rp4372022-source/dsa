@@ -35,4 +35,44 @@ public class A33_SearchInsertPos {
             
         return res;
     }
+
+
+    int search1(int[] nums,int target){
+        
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1,2,3,4,5};
+        int target = 4;
+
+        int left = 0;
+        int right = nums.length-1;
+
+        while(left<right){
+            int mid = left + (right-left)/2;
+            if(mid == 0 && nums[mid]>nums[mid+1]){
+                break;
+            }else if(mid == nums.length-1 && nums[mid]>nums[mid-1]){
+                break;
+            }
+            if(nums[mid] < nums[mid+1]) left = mid + 1;
+            else right = mid;
+        }
+
+        System.out.println(left);
+
+        right = left;
+        left = 0;
+        while(left<=right){
+            int mid = left + (right-left)/2;
+            if(nums[mid] == target) {
+                System.out.println(mid);
+                break;
+            }
+            else if(nums[mid] > target) right = mid - 1;
+            else left = mid + 1;
+        }
+        System.out.println();
+    }
 }
