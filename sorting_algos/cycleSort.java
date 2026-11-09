@@ -21,7 +21,7 @@ public class cycleSort {
         int ptr = 0;
         while(ptr<nums.length){
             int correctIndex = nums[ptr] - 1; //when range is 0 to N
-            if(0 <=correctIndex && correctIndex > nums.length && nums[ptr] != nums[correctIndex]){
+            if(0 <=correctIndex && correctIndex < nums.length && nums[ptr] != nums[correctIndex]){
                 //swap 
                 int temp = nums[ptr];
                 nums[ptr] = nums[correctIndex];
