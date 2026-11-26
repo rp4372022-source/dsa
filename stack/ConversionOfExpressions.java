@@ -42,4 +42,37 @@ public class ConversionOfExpressions{
 
         return prefix.reverse().toString();
     }
+
+    public String toPostfix(String infix){
+        StringBuilder postfix = new StringBuilder();
+
+        Deque<Character> stack = new ArrayDeque<>();
+
+        for(int i=0;i<infix.length();i++){
+            if(infix.charAt(i) == ')'){
+                while(!stack.isEmpty() && stack.peek() != '('){
+                    postfix.append(stack.pop());
+                }
+                if(!stack.isEmpty()) stack.pop();
+            }
+            else if("+-*/^".indexOf(infix.charAt(i)) >= 0){
+                while(!stack.isEmpty() && getPrecedence(stack.peek()) > getPrecedence(infix.charAt(i))){
+                    postfix.append(stack.pop());
+                }
+                stack.push(infix.charAt(i));
+            } else if(infix.charAt(i) == '('){
+                stack.push('(');
+            }
+            else {
+                postfix.append(infix.charAt(i));
+            }
+        }
+
+        // after ending of expression adding remaining elements
+        while(!stack.isEmpty()){
+            postfix.append(stack.pop());
+        }
+        
+        return postfix.toString();
+    }
 }

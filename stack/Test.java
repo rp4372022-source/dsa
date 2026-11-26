@@ -1,11 +1,10 @@
-
-import dsa.stack.ConversionOfExpressions;
+package dsa.stack;
 
 public class Test {
     public static void main(String[] args) {
         ConversionOfExpressions c = new ConversionOfExpressions();
-        System.out.println(c.toPrefix("a*(c+d)"));
-
+        // System.out.println(c.toPrefix("a*(c+d)"));
+        System.out.println(c.toPostfix("a*(c+d)"));
         // StringBuilder sb = new StringBuilder("");
 
         // StringBuilder sb1 = new StringBuilder("");
